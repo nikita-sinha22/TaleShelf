@@ -27,7 +27,7 @@ function Signup() {
       email: data.email,
       password: data.password,
     };
-    await axios.post('https://taleshelf-backend.onrender.com/user/signup', userInfo)
+    await axios.post('http://localhost:4001/user/signup', userInfo)
       .then((res) => {
         if (res.data) {
           toast.success('Signup Successfully!');
