@@ -13,16 +13,17 @@ app.use(express.json());
 dotenv.config();
 
 const PORT=process.env.PORT || 4000;
-const URI=process.env.MongoDBURI;
+const URI = process.env.MongoDBURI;
 
-//connect to mongoDB
-try{
-  mongoose.connect(URI);
-  console.log("Connected to MongoDB");
-}catch(error){
-  console.log("Error: ",error)
+// Connect to MongoDB
+mongoose.connect(URI)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error.message);
+  });
 
-}
 
 //defining route 
 app.use("/book",bookRoute);
