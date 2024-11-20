@@ -27,6 +27,10 @@ try{
 
 }
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend API!");
+});
+
 
 //defining route 
 app.use("/book",bookRoute);
