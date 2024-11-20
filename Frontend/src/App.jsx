@@ -15,7 +15,7 @@ function App() {
     <div className='dark:bg-slate-800 dark:text-white '>
     <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/Course" element={authUser ? <Courses /> : <Navigate to="/signup" />}
+    <Route path="/course" element={authUser ? <Courses /> : <Navigate to="/signup" />}
     />
     <Route path="/signup" element={<Signup />}/>
    </Routes>
